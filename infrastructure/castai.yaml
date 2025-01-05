@@ -8,7 +8,7 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   name: cast-ai-api-key
-  namespace: castai-agent
+  namespace: flux-system
 spec:
   encryptedData:
     apiKey: AgClIS1+8qHIYN0w4pssmFzIiuCCfX6TZQBlYW9nKgAajAJzYBkGaO8ecDO+COBdsl9GvvG4y6l8yn6GOHugAj3ojBkGfS1ahzZVKKxND+Si6xIMM1qRksd6ZmVSUl/KEgeAJdMJIsYW9MgjxR6CCFbZPbjj5mhlW7f0cfcySS/9YmmzB0dN5S7zkrOpx8Wq4pqsMJZUH3jPAf4phBOFuBEkvAPvQh21TDQNc5UqBb4sLKjeZK3sDRPrvLSKYkdi5MubRPidFwb8XjfkMWO4a37T/Ks1sGz6j2mMYk8d0GltsGiVDldFIz02RdVIg6C50IT1zYeGG7yvb8w7h6OtLrlqGgaL9JZNKfZ1MjVIF3UyBwlPjLkydFE0nioKwMw7fO6I1LGPnKD9WnIs5/Qn1b+srlw/+jdaeNbH9ubtFqvpJzgBPr+pqrdiiZ6XYIINMOjfxyxdyShqA5pZ5XFl5+ch/s8c8g/v8BNmjXBGYeOgcrl2bihXamfa7nc7N8IEtCd4jl9Yx2d1951NwiObyHj/tJWQ193ZbhLKjiZLIIqcwS+npUgZF1Qr3H6IhaQBvC+QoK+Hst1jwGkr4tDrZFJz/XDG8skyZWEZSgBuNAXZGRpqqbRIX3TMCEG/6eKLeNWbuaaEY/OrSBhtBw3gV5crLWenONtoIlkEREAXgs03kugopZtWGqXMscCb/+H00+WDCGxt4Wn/WtR+snMsLiEElIWf2G1C/cZyTQ30VMx1vAdL11FniqoZvjgzRusJy488pZItkCC69xXYro8n8Jai
@@ -16,7 +16,7 @@ spec:
     metadata:
       creationTimestamp: null
       name: cast-ai-api-key
-      namespace: castai-agent
+      namespace: flux-system
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
