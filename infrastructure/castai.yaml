@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: castai-agent
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: cast-ai-api-key
+  namespace: castai-agent
+spec:
+  encryptedData:
+    apiKey: AgBGY8OvOUGS3sqFRwNmr6QbI5d5xdevPCS6762bj4JePZpeK0Xj6mTG+IkLkQC8eqL7H78Mb88bNB9JwX4ekK3hCmBKZoU3rxu3Ik0Blc4klh3Lomqol29wIOqwQa98A5xMrgZOlShht7Y3px6IG9fXjoHyCuzRlKzA6n35VUZPkxXA2+SA2Vksie7sBgHLbZBmmadeETBEHH9xEuFRCpchDNS5Lwww4NSW8A2q/pFBqNiuS/friyHonwxA/t2K0YWoX4xAz9j1s74NkO3QRWWeNOyWijmhDbkj5+Cx038mpnlbimFysPbOazZT6LIr5XS+VhBR8ZR6y+8k06/154C0GhUebKDoChRe18NlfLaf1NF4TUauXRQfMRVRyYHlNH+uceoNsiiukhBuXa494r1Lvh6nOevx30aRPPZwtQvgaHYBXA130beT8oN4bWN1XaXYYfHRJoVc6XDpMa53hCWzBMNgzZy9/fs0j8WoIN2cWzcUqBe+Xp9kLbehgm+/zG1BZ+5imqA95iFbRKHBKw2iT/ROcK9jvqNH2CX4a8QLgo35trYubw3P+ggmZtkpGWrX7NYkEQ0mfojoRZWy9bqxuMw/ERsWK/sEyoeF9jIRbhU98yXz7WxmgWkS83+MF3JIo/r2602xQzFG0uSyaaMwOnyOYncmPXxmyGm2LO0aUESJ537sHwF0yqpB05LnLrPm6U1TZTnOjoQTdcVg3IEmr9Yan4X/Kg4LmHT4gnNT0HuYnToNHXJGnaFQD4ej21PlafmRc6GqLX7SJ+KTjQyy
+  template:
+    metadata:
+      creationTimestamp: null
+      name: cast-ai-api-key
+      namespace: castai-agent
+---
