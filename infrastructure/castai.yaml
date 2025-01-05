@@ -18,15 +18,15 @@ spec:
       creationTimestamp: null
       name: cast-ai-api-key
       namespace: castai-agent
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: castai-agent
-  namespace: castai-agent
-spec:
-  interval: 24h
-  url: https://castai.github.io/helm-charts
+# ---
+# apiVersion: source.toolkit.fluxcd.io/v1beta2
+# kind: HelmRepository
+# metadata:
+#   name: castai-agent
+#   namespace: castai-agent
+# spec:
+#   interval: 24h
+#   url: https://castai.github.io/helm-charts
 # ---
 # apiVersion: helm.toolkit.fluxcd.io/v2beta1
 # kind: HelmRelease
