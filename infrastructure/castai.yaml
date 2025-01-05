@@ -1,53 +1,53 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: castai-agent
----
-apiVersion: bitnami.com/v1alpha1
-kind: SealedSecret
-metadata:
-  creationTimestamp: null
-  name: cast-ai-api-key
-  namespace: castai-agent
-spec:
-  encryptedData:
-    API_KEY: AgB1RWDK7ahAVpOaztoWC37Ucgq0jMpdqzaPa45pePEhWJVIScljLc6qekKgxUQXxuKTsD+VXMOCizkEO0gOya7+dkt6y8jLlRuqvtUV5IP/acAibNtxWXBpH1MUOUkRjdxC+TlcWsoztElv/jNY6nYSKsJPXZTNHBi4NATpFPnV0RW+SfDgihC23wr9NfXE7lLqu49EaQ80Jbv9VW4rQV/xp4fEqmbaEwAnZ1Yk0wqv/V78hgYBd3sVJ7ImXS3dDTZbW6Al+C7P3Y4f5miNz6ekacaLyNEsNr2uGISwa66Hs6XzBS9LcAm9+Z5stpPUdgMK10Ghr5KQrJmBU/oV3BWuwLmUAthW4boSM60TADGgLXn9i7A6pgGlritMoM/8uI4T+L7Erl+IJWYgRNxMgANC3KwPF8EDlpdiS6DlncWE1Dx5iJZkzLCivJ3rvYXfD88FuFD0vpvSNk5JsV0ToUknsroiauyWNirmLGDdDiiud68I60bdAtglNurYnKcrwnVAPpdVCXPu/Z2v6ksZW0jiHxIcv0MDCtpWm5bNCHIRg+JDRDWFhY/OvOiKtXQzsr4/OJpTNw3v4tOLLZumshWc6Iaj143dofdHDgo91QxEkd6TbLTTWIB2x9aPbZYNbapCGR+qUYwGDs8ueWMNr3xER1WnVGRIyDfA4ImmFPVnnQ92Qu21o2JWlsAYA7JzLEic2t5DBbK0rD0y/hsspgb7wsiFzF0u6GmTq6H1wJ0XeZQr5kAPUn/9k7ahbT+vncW7V2BiUjQAR4Bt8yLCkfSf
-  template:
-    metadata:
-      creationTimestamp: null
-      name: cast-ai-api-key
-      namespace: castai-agent
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: castai-agent
-  namespace: castai-agent
-spec:
-  interval: 24h
-  url: https://castai.github.io/helm-charts
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: castai-agent
-  namespace: castai-agent
-spec:
-  chart:
-    spec:
-      chart: castai-agent
-      sourceRef:
-        kind: HelmRepository
-        name: castai-agent
-      version: "*"
-  interval: 12h
-  releaseName: castai-agent-controller
-  targetNamespace: castai-agent
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
-  values:
-    provider: anywhere
-    apiKeySecretRef: cast-ai-api-key
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: castai-agent
+# ---
+# apiVersion: bitnami.com/v1alpha1
+# kind: SealedSecret
+# metadata:
+#   creationTimestamp: null
+#   name: cast-ai-api-key
+#   namespace: castai-agent
+# spec:
+#   encryptedData:
+#     API_KEY: AgB1RWDK7ahAVpOaztoWC37Ucgq0jMpdqzaPa45pePEhWJVIScljLc6qekKgxUQXxuKTsD+VXMOCizkEO0gOya7+dkt6y8jLlRuqvtUV5IP/acAibNtxWXBpH1MUOUkRjdxC+TlcWsoztElv/jNY6nYSKsJPXZTNHBi4NATpFPnV0RW+SfDgihC23wr9NfXE7lLqu49EaQ80Jbv9VW4rQV/xp4fEqmbaEwAnZ1Yk0wqv/V78hgYBd3sVJ7ImXS3dDTZbW6Al+C7P3Y4f5miNz6ekacaLyNEsNr2uGISwa66Hs6XzBS9LcAm9+Z5stpPUdgMK10Ghr5KQrJmBU/oV3BWuwLmUAthW4boSM60TADGgLXn9i7A6pgGlritMoM/8uI4T+L7Erl+IJWYgRNxMgANC3KwPF8EDlpdiS6DlncWE1Dx5iJZkzLCivJ3rvYXfD88FuFD0vpvSNk5JsV0ToUknsroiauyWNirmLGDdDiiud68I60bdAtglNurYnKcrwnVAPpdVCXPu/Z2v6ksZW0jiHxIcv0MDCtpWm5bNCHIRg+JDRDWFhY/OvOiKtXQzsr4/OJpTNw3v4tOLLZumshWc6Iaj143dofdHDgo91QxEkd6TbLTTWIB2x9aPbZYNbapCGR+qUYwGDs8ueWMNr3xER1WnVGRIyDfA4ImmFPVnnQ92Qu21o2JWlsAYA7JzLEic2t5DBbK0rD0y/hsspgb7wsiFzF0u6GmTq6H1wJ0XeZQr5kAPUn/9k7ahbT+vncW7V2BiUjQAR4Bt8yLCkfSf
+#   template:
+#     metadata:
+#       creationTimestamp: null
+#       name: cast-ai-api-key
+#       namespace: castai-agent
+# ---
+# apiVersion: source.toolkit.fluxcd.io/v1beta2
+# kind: HelmRepository
+# metadata:
+#   name: castai-agent
+#   namespace: castai-agent
+# spec:
+#   interval: 24h
+#   url: https://castai.github.io/helm-charts
+# ---
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: castai-agent
+#   namespace: castai-agent
+# spec:
+#   chart:
+#     spec:
+#       chart: castai-agent
+#       sourceRef:
+#         kind: HelmRepository
+#         name: castai-agent
+#       version: "*"
+#   interval: 12h
+#   releaseName: castai-agent-controller
+#   targetNamespace: castai-agent
+#   install:
+#     crds: Create
+#   upgrade:
+#     crds: CreateReplace
+#   values:
+#     provider: anywhere
+#     apiKeySecretRef: cast-ai-api-key
