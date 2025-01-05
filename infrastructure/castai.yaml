@@ -50,4 +50,4 @@ spec:
     crds: CreateReplace
   values:
     provider: "anywhere"
-    apiKey: "898877f0bb993595fbb51c9bcdb4cdba2a2321eaec3decf9ba0bb2a98768da84"
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
