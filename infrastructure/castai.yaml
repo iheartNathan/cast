@@ -49,5 +49,5 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
-    provider: anywhere
-    apiKeySecretRef: cast-ai-api-key
+    provider: "anywhere"
+    apiKeySecretRef: "cast-ai-api-key"
