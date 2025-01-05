@@ -27,27 +27,27 @@ metadata:
 spec:
   interval: 24h
   url: https://castai.github.io/helm-charts
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: castai-agent
-  namespace: castai-agent
-spec:
-  chart:
-    spec:
-      chart: castai-agent
-      sourceRef:
-        kind: HelmRepository
-        name: castai-agent
-      version: "*"
-  interval: 12h
-  releaseName: castai-agent-controller
-  targetNamespace: castai-agent
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
-  values:
-    provider: anywhere
-    apiKeySecretRef: cast-ai-api-key
+# ---
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: castai-agent
+#   namespace: castai-agent
+# spec:
+#   chart:
+#     spec:
+#       chart: castai-agent
+#       sourceRef:
+#         kind: HelmRepository
+#         name: castai-agent
+#       version: "*"
+#   interval: 12h
+#   releaseName: castai-agent-controller
+#   targetNamespace: castai-agent
+#   install:
+#     crds: Create
+#   upgrade:
+#     crds: CreateReplace
+#   values:
+#     provider: anywhere
+#     apiKeySecretRef: cast-ai-api-key
