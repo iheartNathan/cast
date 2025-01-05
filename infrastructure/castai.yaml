@@ -50,4 +50,4 @@ spec:
     crds: CreateReplace
   values:
     provider: anywhere
-    apiKeySecretName: cast-ai-api-key
+    apiKeySecretRef: cast-ai-api-key
